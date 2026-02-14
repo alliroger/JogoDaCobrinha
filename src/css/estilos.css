@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    color: #ffffff;
+    margin: 0;
+}
+
+h1 {
+    color: #61dafb;
+    margin-bottom: 20px;
+}
+
+canvas {
+
+    background-color: #1a1a1a;
+    border: 5px solid #61dafb;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.5);
+    /* Adiciona um espaçamento inferior para não colidir com os botões em mobile */
+    margin-bottom: 20px;
+    display: block;
+    max-width: 100%; /* Melhora visualização em telas pequenas */
+    height: auto;
+}
+
+.controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.controls p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do botão Iniciar */
+}
+
+#startButton:hover {
+    background-color: #4fa3d7;
+}
+
+/* --- Estilos para os controles mobile --- */
+.mobile-controls {
+    display: none; /* Por padrão, esconde os botões mobile */
+
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 20px;
+    max-width: 200px; /* Limita a largura dos controles */
+}
+
+.horizontal-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    padding: 15px 25px;
+    font-size: 1.5em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 60px; /* Garante um tamanho mínimo para os botões */
+    touch-action: manipulation; /* Impede zoom duplo e melhora o tempo de resposta */
+    user-select: none; /* Impede que o usuário selecione o texto do emoji */
+    -webkit-tap-highlight-color: transparent; /* Remove o flash azul ao tocar no mobile */
+}
+
+.control-btn:active { /* Feedback visual ao tocar */
+    background-color: #0056b3;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Query: Exibe os controles mobile apenas em telas menores */
+@media (max-width: 600px) {
+    .mobile-controls {
+        display: flex; /* Mostra os botões mobile */
+    }
+
+    /* Esconde a instrução de teclado em mobile */
+    .controls p {
+        display: none;
+    }
+}
